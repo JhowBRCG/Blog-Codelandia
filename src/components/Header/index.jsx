@@ -16,6 +16,8 @@ const Header = ({ setSearch }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!tempSearch) return;
     setSearch(tempSearch);
     setTempSearch("");
   };
