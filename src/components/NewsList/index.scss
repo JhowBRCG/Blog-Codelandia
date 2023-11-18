@@ -1,0 +1,21 @@
+section {
+  .lds-dual-ring {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .load-more {
+    display: block;
+    margin: 2rem auto auto auto;
+    padding: 1rem 2rem;
+  }
+}
+
+ul {
+  display: grid;
+  gap: 5rem;
+}
+
+.not-found {
+  text-align: center;
+}

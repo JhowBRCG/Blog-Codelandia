@@ -1,0 +1,46 @@
+@use "variables";
+@use "mixins";
+
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-family: variables.$primary-font;
+  font-weight: 400;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: variables.$body-color;
+}
+
+main {
+  padding: 10rem 1rem;
+
+  @include mixins.smallDevices {
+    padding: 5rem 1rem;
+  }
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+
+  @include mixins.mediumDevices {
+    max-width: 600px;
+  }
+}

@@ -1,0 +1,9 @@
+@use "../../styles/variables";
+
+.load-more {
+  background: variables.$white;
+  color: variables.$primary-color;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(19, 19, 31, 0.05);
+  cursor: pointer;
+}

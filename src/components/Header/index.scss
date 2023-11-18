@@ -1,0 +1,54 @@
+@use "../../styles/variables";
+
+.header {
+  background: variables.$primary-color-gradient;
+  padding: 4.1rem 1rem;
+
+  .header__texts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7.3rem;
+
+    .header__logo,
+    .header__blog {
+      color: variables.$white;
+      font-size: 2.4rem;
+      font-weight: 400;
+    }
+  }
+
+  .header-input__container {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background: url("../../assets/imgs/search.svg") no-repeat;
+      width: 30px;
+      height: 30px;
+      inset: 0;
+      margin: auto auto auto 1.7rem;
+    }
+  }
+
+  .header__input {
+    width: 100%;
+    min-height: 65px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: variables.$white;
+    font-weight: 500;
+    font-size: 1.8rem;
+    text-indent: 6.4rem;
+
+    &::placeholder {
+      font-weight: 500;
+      font-size: 1.8rem;
+      color: variables.$white;
+      opacity: 0.5;
+    }
+  }
+}
