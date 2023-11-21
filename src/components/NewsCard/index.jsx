@@ -22,9 +22,9 @@ const NewsCard = ({ data }) => {
       "12": "dez",
     };
 
-    const day = data.publishedAt.slice(8, 10);
-    const month = monthAbbreviations[data.publishedAt.slice(5, 7)];
-    const year = data.publishedAt.slice(0, 4);
+    const day = data.pubDate.slice(8, 10);
+    const month = monthAbbreviations[data.pubDate.slice(5, 7)];
+    const year = data.pubDate.slice(0, 4);
 
     return `${day} de ${month}, ${year}`;
   };

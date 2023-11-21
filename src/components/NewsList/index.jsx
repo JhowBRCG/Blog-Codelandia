@@ -16,7 +16,8 @@ const item = {
 };
 
 const getNews = async (query, limit) => {
-  const url = `https://newsapi.org/v2/everything?q=${query}&pageSize=${limit}&apiKey=09464833ba5f44bd8611fb3482150ca5`;
+  const apiKey = "pub_33242fbc060fecedbe3e8986f78e0921a2404";
+  const url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${query}&size=${limit}`;
   const response = await fetch(url);
   return await response.json();
 };
@@ -24,12 +25,12 @@ const getNews = async (query, limit) => {
 const NewsList = ({ search }) => {
   const [news, setNews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [limit, setLimit] = useState(10);
+  const [limit, setLimit] = useState(3);
 
   const fetchNews = async (query) => {
     setIsLoading(true);
     const data = await getNews(query, limit);
-    const articles = data.articles;
+    const articles = data.results;
     setNews(articles);
     setIsLoading(false);
   };
@@ -49,7 +50,7 @@ const NewsList = ({ search }) => {
             animate={"visible"}
           >
             {news.map((data) => (
-              <motion.li variants={item} key={data.url}>
+              <motion.li variants={item} key={data.article_id}>
                 <NewsCard data={data} />
               </motion.li>
             ))}
@@ -65,7 +66,7 @@ const NewsList = ({ search }) => {
             Notícia não encontrada
           </motion.p>
         )}
-        {news.length !== 0 && <LoadMoreButton setLimit={setLimit} />}
+        {news.length > 0 && news.length < 9  && <LoadMoreButton setLimit={setLimit} />}
         {isLoading && <SpinnerLoading />}
       </section>
     </main>
