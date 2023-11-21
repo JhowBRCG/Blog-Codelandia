@@ -20,7 +20,9 @@ The user'll be able to search any news articles by typing the article name or so
 
 ### Load more articles
 
-Initially the article list would have only ten articles. But when clicking on the button "Carregar mais" it'll be load ten more articles.
+Initially the article list would have only three articles. But when clicking on the button "Carregar mais" it'll be load three more articles.
+
+OBS: The limit for the articles will be only 9, since I'm using the free plan from the API.
 
 <img src="./docs/load-more.png">
 
