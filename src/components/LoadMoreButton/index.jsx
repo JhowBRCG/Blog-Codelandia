@@ -2,7 +2,7 @@ import "./index.scss";
 
 const LoadMoreButton = ({ setLimit }) => {
   const handleClick = () => {
-    setLimit((prevLimit) => prevLimit + 10);
+    setLimit((prevLimit) => prevLimit + 3);
   };
 
   return (
