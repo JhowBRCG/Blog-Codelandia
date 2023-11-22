@@ -1,3 +1,5 @@
+@use "../../styles/variables";
+
 section {
   .lds-dual-ring {
     display: block;
@@ -18,4 +20,5 @@ ul {
 
 .not-found {
   text-align: center;
+  color: variables.$black-opacity;
 }
