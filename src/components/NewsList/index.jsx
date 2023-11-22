@@ -17,7 +17,7 @@ const item = {
 
 const getNews = async (query, limit) => {
   const apiKey = "pub_33242fbc060fecedbe3e8986f78e0921a2404";
-  const url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=${query}&size=${limit}`;
+  const url = `https://newsdata.io/api/1/news?apikey=${apiKey}&qInMeta=${query}&size=${limit}&language=en,pt`;
   const response = await fetch(url);
   return await response.json();
 };
@@ -66,7 +66,9 @@ const NewsList = ({ search }) => {
             Notícia não encontrada
           </motion.p>
         )}
-        {news.length > 0 && news.length < 9  && <LoadMoreButton setLimit={setLimit} />}
+        {news.length > 0 && news.length < 9 && (
+          <LoadMoreButton setLimit={setLimit} />
+        )}
         {isLoading && <SpinnerLoading />}
       </section>
     </main>
